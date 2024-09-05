@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Terremotos</title>
+	</head>
+	<body>
+		<h1>Los terremotos más fuertes del día</h1>
+		<div>
+			<label for="numRegistros">Cuántos registros mostrar:</label>
+			<input
+				type="number"
+				id="numRegistros"
+				min="0"
+				max="10"
+				placeholder="0 - 10"
+			/>
+			<button id="btnBuscar">Buscar</button>
+		</div>
+		<div id="resultados"></div>
+		<script src="renderer.js"></script>
+	</body>
+</html>
