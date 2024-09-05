@@ -4,19 +4,22 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Terremotos</title>
+		<link rel="stylesheet" href="node_modules/picnic/picnic.min.css" />
+		<link rel="stylesheet" href="styles.css" />
 	</head>
 	<body>
 		<h1>Los terremotos más fuertes del día</h1>
-		<div>
-			<label for="numRegistros">Cuántos registros mostrar:</label>
+		<div class="">
+			<label for="numRegistros" class="half">Cuántos registros mostrar:</label>
 			<input
 				type="number"
 				id="numRegistros"
 				min="0"
 				max="10"
 				placeholder="0 - 10"
+				class=""
 			/>
-			<button id="btnBuscar">Buscar</button>
+			<button id="btnBuscar" class="">Buscar</button>
 		</div>
 		<div id="resultados"></div>
 		<script src="renderer.js"></script>

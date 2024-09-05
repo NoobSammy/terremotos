@@ -37,7 +37,17 @@ const imprimirTerremotos = (terremotos = []) => {
 
 	terremotosHTML += terremotos
 		.map((terremoto) => {
-			return `<p>${terremoto.properties.title}</p>`;
+			return `<article class='card'>
+				<header>
+					<h3>
+						<span class="label error">M ${terremoto.properties.mag}</span>
+						${terremoto.properties.place}
+					</h3>
+				</header>
+				<footer>
+					${new Date(terremoto.properties.time).toLocaleTimeString()}
+				</footer>
+			</article>`;
 		})
 		.join("");
 	$resultados.innerHTML = terremotosHTML;
