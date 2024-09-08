@@ -1,9 +1,11 @@
 const $input = document.querySelector("#numRegistros");
 const $button = document.querySelector("#btnBuscar");
 const $resultados = document.querySelector("#resultados");
+const $fechaActual = document.querySelector("#fechaActual");
 
 const API_URL = "https://earthquake.usgs.gov/fdsnws/event/1/query";
 const fechaHoy = new Date().toLocaleDateString();
+$fechaActual.innerHTML = fechaHoy;
 
 $button.addEventListener("click", async () => {
 	const numRegistros = $input.value;
@@ -36,16 +38,17 @@ const imprimirTerremotos = (terremotos = []) => {
 	let terremotosHTML = "";
 
 	terremotosHTML += terremotos
-		.map((terremoto) => {
+		.map((terremoto, index) => {
 			return `<article class='card'>
 				<header>
 					<h3>
+						<span class="label">${index + 1}</span>
 						<span class="label error">M ${terremoto.properties.mag}</span>
 						${terremoto.properties.place}
 					</h3>
 				</header>
 				<footer>
-					${new Date(terremoto.properties.time).toLocaleTimeString()}
+					🕒 ${new Date(terremoto.properties.time).toLocaleTimeString()}
 				</footer>
 			</article>`;
 		})

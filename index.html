@@ -8,7 +8,11 @@
 		<link rel="stylesheet" href="styles.css" />
 	</head>
 	<body>
-		<h1>Los terremotos más fuertes del día</h1>
+		<h1>
+			Los terremotos más fuertes del día
+			<span id="fechaActual"></span>
+			🌎
+		</h1>
 		<div>
 			<label for="numRegistros">Cuántos registros mostrar:</label>
 			<input
@@ -18,7 +22,7 @@
 				max="10"
 				placeholder="0 - 10"
 			/>
-			<button id="btnBuscar">Buscar</button>
+			<button id="btnBuscar">🔍 Buscar</button>
 		</div>
 		<div id="resultados"></div>
 		<script src="renderer.js"></script>
