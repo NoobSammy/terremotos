@@ -48,6 +48,15 @@ export default class UIService {
 	}
 
 	/**
+	 * Mostrar animación de carga de terremotos
+	 * @param {Number} numRegistros Número de elementos de carga a mostrar
+	 */
+	imprimirCarga(numRegistros) {
+		const skeletonsHTML = "<div class='skeleton'></div>".repeat(numRegistros);
+		this.#$resultados.innerHTML = skeletonsHTML;
+	}
+
+	/**
 	 * Obtener un elemento HTML que coincida con un selector
 	 * @param {String} selector
 	 * @returns Elemento HTML o null
