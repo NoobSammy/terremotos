@@ -1,0 +1,29 @@
+body {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+input {
+	width: auto;
+}
+
+#resultados {
+	margin-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+.skeleton {
+	animation: skeleton-loading 1s linear infinite alternate;
+	border-radius: 0.2em;
+	height: 105px;
+	margin-bottom: 0.6em;
+}
+
+@keyframes skeleton-loading {
+	0% {
+		background-color: hsl(200, 20%, 80%);
+	}
+	100% {
+		background-color: hsl(200, 20%, 95%);
+	}
+}
