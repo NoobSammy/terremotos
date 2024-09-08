@@ -1,10 +1,11 @@
 const $input = document.querySelector("#numRegistros");
 const $button = document.querySelector("#btnBuscar");
 const $resultados = document.querySelector("#resultados");
+const $fechaActual = document.querySelector("#fechaActual");
 
-const API_URL =
-	"https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson";
-const fechaHoy = new Date().get;
+const API_URL = "https://earthquake.usgs.gov/fdsnws/event/1/query";
+const fechaHoy = new Date().toLocaleDateString();
+$fechaActual.innerHTML = fechaHoy;
 
 $button.addEventListener("click", async () => {
 	const numRegistros = $input.value;
@@ -16,14 +17,15 @@ $button.addEventListener("click", async () => {
 
 const getTerremotos = async (numRegistros) => {
 	const params = new URLSearchParams({
-		starttime: "2024-09-04T00:00:00",
-		endtime: "2024-09-04T23:59:00",
+		format: "geojson",
+		starttime: fechaHoy + "T00:00:00",
+		endtime: fechaHoy + "T23:59:00",
 		orderby: "magnitude",
 		limit: numRegistros,
 	});
 
 	try {
-		const response = await fetch(`${API_URL}&${params.toString()}`);
+		const response = await fetch(`${API_URL}&}?${params.toString()}`);
 		const data = await response.json();
 
 		return data.features;
@@ -36,16 +38,17 @@ const imprimirTerremotos = (terremotos = []) => {
 	let terremotosHTML = "";
 
 	terremotosHTML += terremotos
-		.map((terremoto) => {
+		.map((terremoto, index) => {
 			return `<article class='card'>
 				<header>
 					<h3>
+						<span class="label">${index + 1}</span>
 						<span class="label error">M ${terremoto.properties.mag}</span>
 						${terremoto.properties.place}
 					</h3>
 				</header>
 				<footer>
-					${new Date(terremoto.properties.time).toLocaleTimeString()}
+					🕒 ${new Date(terremoto.properties.time).toLocaleTimeString()}
 				</footer>
 			</article>`;
 		})
