@@ -5,7 +5,7 @@ cuanto a magnitud del día actual.
 
 ## Instalación
 
-Para ejecutar la applicación ejecutar los siguientes comandos:
+Para ejecutar la aplicación ejecutar los siguientes comandos:
 
 ```bash
 npm install
@@ -19,7 +19,8 @@ npm run make
 ```
 
 El ejecutable se encontrará en la carpeta `out/`:
-* Windows: `out/terremotos-win32-x64/terremotos.exe`
+
+- Windows: `out/terremotos-win32-x64/terremotos.exe`
 
 ## API
 
