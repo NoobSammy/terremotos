@@ -1,7 +1,7 @@
 {
   "name": "terremotos",
   "version": "1.0.0",
-  "description": "Consultar los ultimos terremotos mas fuertes",
+  "description": "Consultar los últimos terremotos mas fuertes",
   "main": "main.js",
   "scripts": {
     "start": "electron-forge start",
