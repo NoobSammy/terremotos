@@ -3,6 +3,9 @@
 Aplicación de escritorio que permite obtener un top _n_ terremotos más fuertes en
 cuanto a magnitud del día actual.
 
+![image](https://github.com/user-attachments/assets/3402e0dd-75f1-4be3-9ea9-c5a13da7db74)
+
+
 ## Instalación
 
 Para ejecutar la aplicación ejecutar los siguientes comandos:
