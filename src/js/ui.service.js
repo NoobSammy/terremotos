@@ -33,11 +33,19 @@ export default class UIService {
 	 * @returns HTML del componente como String
 	 */
 	getTerremotoComponente(terremoto, index) {
+		const magnitud = terremoto.properties.mag;
+		let color = "";
+
+		if(magnitud < 3) color = "success";
+		else if (magnitud >= 3 && magnitud < 6) color = "warning";
+		else if (magnitud >= 6) color = "error";
+
 		return `<article class='card'>
 				<header>
 					<h3>
 						<span class="label">${index + 1}</span>
 						<span class="label error">M ${terremoto.properties.mag}</span>
+						<span class="label ${color}">M ${magnitud}</span>
 						${terremoto.properties.place}
 					</h3>
 				</header>
